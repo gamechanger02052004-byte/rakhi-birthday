@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Dear Rakhi</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Background Magical Sparkles -->
+    <div class="floating-sticker" style="top: 8%; left: 8%;">✨</div>
+    <div class="floating-sticker" style="top: 15%; right: 12%;">🎈</div>
+    <div class="floating-sticker" style="bottom: 12%; left: 15%;">💖</div>
+    <div class="floating-sticker" style="bottom: 8%; right: 8%;">🎁</div>
+    <div class="floating-sticker" style="top: 45%; left: 4%;">🌟</div>
+    <div class="floating-sticker" style="top: 35%; right: 6%;">🦋</div>
+    <div class="floating-sticker" style="top: 70%; left: 8%;">🌸</div>
+    <div class="floating-sticker" style="top: 25%; left: 75%;">🍬</div>
+
+    <!-- Floating Music Toggle Control -->
+    <button id="music-toggle" class="music-control" aria-label="Toggle Music">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <div id="app">
+        <!-- Page 1: Landing & Authentication -->
+        <section id="page-1" class="page active">
+            <div class="content animate-content">
+                <h1 class="heading">Welcome Dear</h1>
+                <div class="character-container">
+                    <div id="joyboy" class="joyboy">
+                        <img src="BOY.jpeg" alt="Joyboy">
+                        <p class="sub-label">Joyboy</p>
+                    </div>
+                </div>
+                <div class="auth-form">
+                    <p class="prompt">Please enter your birthdate</p>
+                    <input type="text" id="birthdate" placeholder="dd/mm/yyyy" maxlength="10">
+                    <button id="auth-btn">Enter Portal <i class="fa-solid fa-wand-magic-sparkles"></i></button>
+                    <p id="error-msg" class="error-msg"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 2: Celebration & Music World -->
+        <section id="page-2" class="page">
+            <div class="content">
+                <h1 class="glowing-text">Happy Birthday Rakhi!</h1>
+                <div class="celebration-box">
+                    <div class="cake-container">
+                        <div class="cake">🎂</div>
+                    </div>
+                    <div class="dancing-characters">
+                        <span>💃</span><span>🎉</span><span>🕺</span><span>💖</span><span>✨</span>
+                    </div>
+                </div>
+                <p class="celebration-quote">"Wishing you a day filled with laughter, magic, and sweet surprises!"</p>
+
+                <div class="btn-group-vertical">
+                    <button id="celebrate-btn" class="primary-btn pulse-anim">
+                        <i class="fa-solid fa-cake-candles"></i> Let's Celebrate!
+                    </button>
+                    <div class="nav-split-buttons">
+                        <button id="to-gifts-btn" class="secondary-btn glow-pink">
+                            <i class="fa-solid fa-gift"></i> Surprise Gifts
+                        </button>
+                        <button id="to-wishes-btn" class="secondary-btn glow-purple">
+                            <i class="fa-solid fa-envelope-open-text"></i> Heartfelt Wishes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: The Surprise Gifts Page -->
+        <section id="page-3" class="page">
+            <div class="content">
+                <h2 class="gift-title">🎁 Surprise Gifts 🎁</h2>
+                <p class="gift-subtitle">Unlock each magical box to reveal your surprises!</p>
+                
+                <div class="gift-grid">
+                    <div class="gift-card" data-title="Coffee Treat" data-icon="fa-mug-hot" data-content="A cozy Coffee Treat on me! ☕🍰<br><br>Use this special voucher to claim your treat:<br><div class='voucher-container'><div class='voucher-title'>50 Rs Amazon Gift Card</div><div class='voucher-code-wrapper'><span class='voucher-code'>GIFT50-RAKHI</span><button class='voucher-copy-btn' onclick='copyToClipboard(&quot;GIFT50-RAKHI&quot;, this)'>Copy</button></div></div>">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="ribbon"></div>
+                                <div class="gift-box-icon">🎁</div>
+                                <p class="card-label">Gift #1</p>
+                            </div>
+                            <div class="card-back">
+                                <i class="fa-solid fa-mug-hot gift-back-icon"></i>
+                                <h3>Coffee Treat</h3>
+                                <span class="unwrap-btn">Open</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gift-card" data-title="Secret Audio Message" data-icon="fa-volume-high" data-content="A secret audio note recorded straight from the heart. Put your headphones on and play the magic! 🎵💖">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="ribbon"></div>
+                                <div class="gift-box-icon">🎁</div>
+                                <p class="card-label">Gift #2</p>
+                            </div>
+                            <div class="card-back">
+                                <i class="fa-solid fa-volume-high gift-back-icon"></i>
+                                <h3>Voice Note</h3>
+                                <span class="unwrap-btn">Open</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gift-card" data-title="Memory Gallery" data-icon="fa-images" data-content="A digital journey down memory lane! 📸✨<br><br><div class='memory-polaroid'><img src='your_photo.jpg' alt='Sweet Memory'><div class='memory-caption'>Our Special Moment ❤️</div></div>">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="ribbon"></div>
+                                <div class="gift-box-icon">🎁</div>
+                                <p class="card-label">Gift #3</p>
+                            </div>
+                            <div class="card-back">
+                                <i class="fa-solid fa-images gift-back-icon"></i>
+                                <h3>Memories</h3>
+                                <span class="unwrap-btn">Open</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gift-card" data-title="Magic Stickers" data-icon="fa-wand-magic-sparkles" data-content="A bundle of custom, quirky stickers crafted especially for you! Download and spark up your chats! 🌸🦄">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <div class="ribbon"></div>
+                                <div class="gift-box-icon">🎁</div>
+                                <p class="card-label">Gift #4</p>
+                            </div>
+                            <div class="card-back">
+                                <i class="fa-solid fa-wand-magic-sparkles gift-back-icon"></i>
+                                <h3>Magic Gift</h3>
+                                <span class="unwrap-btn">Open</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-footer-btns">
+                    <button id="to-page-2-from-3" class="outline-btn">
+                        <i class="fa-solid fa-house"></i> Home
+                    </button>
+                    <button id="to-page-4-from-3" class="primary-btn">
+                        <i class="fa-solid fa-arrow-right"></i> Read Wishes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: The Heartfelt Wishes Page -->
+        <section id="page-4" class="page">
+            <div class="content">
+                <h2 class="wishes-title">💌 Heartfelt Wishes 💌</h2>
+                <p class="wishes-subtitle">Tap the letter envelope to read my heartfelt note...</p>
+
+                <div class="envelope-wrapper">
+                    <div id="envelope" class="envelope">
+                        <div class="flap"></div>
+                        <div class="pocket"></div>
+                        <div class="letter">
+                            <div class="letter-content">
+                                <p class="letter-text">
+                                    "Koshish ki thi ki aapke is khaas din ko thoda aur magical bana saku... Pata nhi aap mujhe miloge ke nahi, par aapki muskaan mere liye hamesha special rahegi. Happy Birthday, Rakhi! Forever wishing the best for you..."
+                                </p>
+                                <span class="letter-signature">~ With Love ✨</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="message-section">
+                    <p class="anonymous-prompt">Have something to say back? Leave an anonymous response!</p>
+                    <form action="https://formspree.io/f/your-form-id" method="POST" class="anonymous-form">
+                        <textarea name="message" placeholder="Type your anonymous reply here..."></textarea>
+                        <button type="submit" class="submit-btn">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+                <div class="nav-footer-btns">
+                    <button id="to-page-2-from-4" class="outline-btn">
+                        <i class="fa-solid fa-house"></i> Home
+                    </button>
+                    <button id="to-page-3-from-4" class="primary-btn pink-btn">
+                        <i class="fa-solid fa-gift"></i> See Gifts
+                    </button>
+                </div>
+
+                <footer>
+                    <p class="footer-note">Made with secretly wrapped love. ✨</p>
+                </footer>
+            </div>
+        </section>
+    </div>
+
+    <!-- Custom Magical Modal for Gift Reveal -->
+    <div id="gift-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-icon-container">
+                <i id="modal-icon" class="fa-solid fa-gift"></i>
+            </div>
+            <h3 id="modal-title">Your Gift!</h3>
+            <p id="modal-text">Here is your surprise description...</p>
+            <button id="modal-action-btn" class="modal-btn">Awesome!</button>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="birthday-song" src="happy birthday.mp3" preload="auto" loop></audio>
+
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
